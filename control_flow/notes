@@ -1,0 +1,7 @@
+ Rust has three kind of loopes
+--> loop
+--->  while
+-->  for
+
+##loop --> This keyword tells the rust to execute a block of code over and over again forever until you explicitly tells it to stop
+

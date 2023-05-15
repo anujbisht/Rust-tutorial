@@ -1,0 +1,48 @@
+Rust is statically compiled language which means it must knows the data types of all variables at the compile time
+Rust has two data type subsets:
+--> Scaler 
+--> Compound
+
+--------------------------Scaler----------------------------------
+
+A scaler type repersent a single value. Rust has four primary scaler types:
+Integer, Floating-point numbers, Booleans, and characters.
+
+## Interger Types --> An integer is a number without fractional component 
+
+Length	Signed	Unsigned
+8-bit	i8	u8
+16-bit	i16	u16
+32-bit	i32	u32
+64-bit	i64	u64
+128-bit	i128	u128
+arch	isize	usize
+
+each variant can be signed or unsigned and has an explicit size.
+
+Signed and unsigned means whether its possible for a number to be negative.In other words, whether the number needs to have a sign with it (signed) or whether it will only ever be Positive and
+therefore  repersented without a sign (unsigned)
+
+Each signed variant can store numbers from -(2n - 1) to 2n - 1 - 1 inclusive, where n is the number of bits that variant uses. So an i8 can store numbers from -(27) to 27 - 1, which equals -128 to 127. Unsigned variants can store numbers from 0 to 2n - 1, so a u8 can store numbers from 0 to 28 - 1, which equals 0 to 255
+
+the isize and usize types depend on the architecture of the computer your program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture
+
+## Floating-Point Types --> Rust’s floating-point types are f32 and f64.The default type is f64 because on modern CPUs, it’s roughly the same speed as f32 but is capable of more precision. All floating-point types are signed.
+
+## NUmeric Operations --> Rust supports the basic mathematical operations you’d expect for all the number types: addition, subtraction, multiplication, division, and remainder. Integer division truncates toward zero to the nearest integer
+
+## Boolean Type -->  Boolean type in Rust has two possible values: true and false. Booleans are one byte in size. The Boolean type in Rust is specified using bool
+
+
+## The Character Type --> we specify char literals with single quotes, as opposed to string literals, which use double quotes. Rust’s char type is four bytes in size and represents a Unicode Scalar Value, which means it can represent a lot more than just ASCII. Accented letters; Chinese, Japanese, and Korean characters; emoji; and zero-width spaces are all valid char values in Rust.
+
+----------------------------------------------------------COMPOUND--------------------------------------------------------------------------------------------
+
+Compound types can group multiple values into one type. Rust has two primitive compound types: tuples and arrays
+
+## Tuple Type --> A tuple is a general way of grouping together a number of values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size
+
+## The Array Type --> Unlike a tuple, every element of an array must have the same type. Unlike arrays in some other languages, arrays in Rust have a fixed length
+Arrays are useful when you want your data allocated on the stack rather than the heap,  arrays are more useful when you know the number of elements will not need to change.
+
+

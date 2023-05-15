@@ -1,0 +1,8 @@
+// ------------------------ Functions ---------------------------
+fn is used to create functions and rust use snake case in which all letters are lowercase and underscore seperate words
+
+    Statements are instructions that perform some action and do not return a value.
+    Expressions evaluate to a resultant value.
+Functions can return values to the code that calls them. We don’t name return values, but we must declare their type after an arrow (->)
+
+

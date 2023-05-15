@@ -1,0 +1,29 @@
+--------------------------> HEAP <----------------------------
+when we put data on heap, we request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use and return a pointer, which is the address of that location. The process is called allocating on the heap and sometimes just abbrevated as allocating
+Because the pointer to the heap is known, fixed size we can store the pointer on to the stack, but when we want the actual data we must follow the pointer.
+
+Accessing data in heap is slower then stack because we have to follow the pointer to get there
+
+When code calls a function, the values passed in to the function (including potential pointer to data on the heap) and the function local variable pushed in to the stack.
+
+---------------------> OWNERSHEIP RULES <-------------------------------------------------------------
+
+--> each value in the rust has an owner
+--> There can only be one owner at a time.
+--> When the owner goes out of scope the value is dropped
+
+-----------------> String Type <------------------------------------------
+
+Rust has a second string type, String. This type manages data allocated on the heap and as such is able to store an amount of text that is unknown to us at compile time
+
+let s = String::from("hello");
+
+----------------> Memory and Allocation <------------------------------------------------
+   {
+        let s = String::from("hello"); // s is valid from this point forward
+
+        // do stuff with s
+    }      
+
+There is a natural point at which we can return the memory our String needs to the allocator: when s goes out of scope. When a variable goes out of scope, Rust calls a special function for us. This function is called drop, and it’s where the author of String can put the code to return the memory. Rust calls drop automatically at the closing curly bracket.
+
