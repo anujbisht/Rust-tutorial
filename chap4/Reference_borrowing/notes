@@ -1,0 +1,18 @@
+----------------------> Reference <---------------------------
+
+A reference is like a pointer in that it's an address we can follow to access the data stored in that address, that data is owned by some other variable.Unlike pointer a reference is guaranteed to point to a valid value of a particular type for the life of that reference.
+
+We are not allows to modify something we are referenced to 
+
+There is a concept of mutable referencing.Mutable references have one big restriction: if you have a mutable reference to a value, you can have no other references to that value
+the benefit of having this restriction is that Rust can prevent data races at compile time. A data race is similar to a race condition and happens when these three behaviors occur
+
+    Two or more pointers access the same data at the same time.
+    At least one of the pointers is being used to write to the data.
+    There’s no mechanism being used to synchronize access to the data.
+
+We also cannot have a mutable reference while we have an immutable one to the same value
+
+-------------------> Dangling References <--------------------------------
+
+Dangling Pointer is a pointer that reference a location in memory that may have been given to someone else--by freeing some memory while preserving a pointer to that memory
